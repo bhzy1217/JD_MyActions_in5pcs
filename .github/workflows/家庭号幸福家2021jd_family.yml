@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 挂机领金币宝箱专用jd_crazy_joy_coin
+name: 家庭号幸福家2021
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 23 * * *'
+    - cron: '1 */1 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: jd_crazy_joy_coin
+    types: jd_family
 jobs:
   build:
 
@@ -35,9 +35,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【挂机领金币宝箱专用jd_crazy_joy_coin】'
+      - name: '运行 【家庭号幸福家2021】'
         run: |
-          node jd_crazy_joy_coin.js
+          node jd_family.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
